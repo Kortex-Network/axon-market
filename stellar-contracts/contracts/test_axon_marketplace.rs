@@ -1,5 +1,5 @@
 // ============================================================================
-// test_wutawuta.rs — Tests updated for optimized storage (Issue #42)
+// test_axon_marketplace.rs — Tests updated for optimized storage (Issue #42)
 //
 // Changes from original:
 // - ai_model parameter changed from String → Symbol
@@ -12,10 +12,10 @@ use soroban_sdk::{
 };
 use soroban_sdk::testutils::Address as _;
 
-mod wutawuta_marketplace;
+mod axon_marketplace;
 
-use wutawuta_marketplace::{
-    WutaWutaMarketplace, WutaWutaMarketplaceClient,
+use axon_marketplace::{
+    AxonMarketplace, AxonMarketplaceClient,
     Artwork, Listing, ListingStatus, Bid, Evolution, Offer, RoyaltyPayment,
 };
 
@@ -31,8 +31,8 @@ fn test_initialization() {
     let admin = Address::generate(&env);
     let treasury = Address::generate(&env);
 
-    let contract_id = env.register_contract(None, WutaWutaMarketplace);
-    let client = WutaWutaMarketplaceClient::new(&env, &contract_id);
+    let contract_id = env.register_contract(None, AxonMarketplace);
+    let client = AxonMarketplaceClient::new(&env, &contract_id);
 
     client.initialize(
         &admin,
@@ -54,8 +54,8 @@ fn test_mint_artwork() {
     let creator = Address::generate(&env);
     let treasury = Address::generate(&env);
 
-    let contract_id = env.register_contract(None, WutaWutaMarketplace);
-    let client = WutaWutaMarketplaceClient::new(&env, &contract_id);
+    let contract_id = env.register_contract(None, AxonMarketplace);
+    let client = AxonMarketplaceClient::new(&env, &contract_id);
 
     client.initialize(&admin, &250, &treasury, &1000000, &86400);
 
@@ -114,8 +114,8 @@ fn test_list_artwork_fixed_price() {
     let creator = Address::generate(&env);
     let treasury = Address::generate(&env);
 
-    let contract_id = env.register_contract(None, WutaWutaMarketplace);
-    let client = WutaWutaMarketplaceClient::new(&env, &contract_id);
+    let contract_id = env.register_contract(None, AxonMarketplace);
+    let client = AxonMarketplaceClient::new(&env, &contract_id);
 
     client.initialize(&admin, &250, &treasury, &1000000, &86400);
 
@@ -156,8 +156,8 @@ fn test_list_artwork_auction() {
     let creator = Address::generate(&env);
     let treasury = Address::generate(&env);
 
-    let contract_id = env.register_contract(None, WutaWutaMarketplace);
-    let client = WutaWutaMarketplaceClient::new(&env, &contract_id);
+    let contract_id = env.register_contract(None, AxonMarketplace);
+    let client = AxonMarketplaceClient::new(&env, &contract_id);
 
     client.initialize(&admin, &250, &treasury, &1000000, &86400);
 
@@ -197,8 +197,8 @@ fn test_make_bid() {
     let bidder = Address::generate(&env);
     let treasury = Address::generate(&env);
 
-    let contract_id = env.register_contract(None, WutaWutaMarketplace);
-    let client = WutaWutaMarketplaceClient::new(&env, &contract_id);
+    let contract_id = env.register_contract(None, AxonMarketplace);
+    let client = AxonMarketplaceClient::new(&env, &contract_id);
 
     client.initialize(&admin, &250, &treasury, &1000000, &86400);
 
@@ -241,8 +241,8 @@ fn test_evolve_artwork() {
     let creator = Address::generate(&env);
     let treasury = Address::generate(&env);
 
-    let contract_id = env.register_contract(None, WutaWutaMarketplace);
-    let client = WutaWutaMarketplaceClient::new(&env, &contract_id);
+    let contract_id = env.register_contract(None, AxonMarketplace);
+    let client = AxonMarketplaceClient::new(&env, &contract_id);
 
     client.initialize(&admin, &250, &treasury, &1000000, &86400);
 
@@ -292,8 +292,8 @@ fn test_cancel_listing() {
     let creator = Address::generate(&env);
     let treasury = Address::generate(&env);
 
-    let contract_id = env.register_contract(None, WutaWutaMarketplace);
-    let client = WutaWutaMarketplaceClient::new(&env, &contract_id);
+    let contract_id = env.register_contract(None, AxonMarketplace);
+    let client = AxonMarketplaceClient::new(&env, &contract_id);
 
     client.initialize(&admin, &250, &treasury, &1000000, &86400);
 
@@ -327,8 +327,8 @@ fn test_admin_functions() {
     let treasury = Address::generate(&env);
     let new_treasury = Address::generate(&env);
 
-    let contract_id = env.register_contract(None, WutaWutaMarketplace);
-    let client = WutaWutaMarketplaceClient::new(&env, &contract_id);
+    let contract_id = env.register_contract(None, AxonMarketplace);
+    let client = AxonMarketplaceClient::new(&env, &contract_id);
 
     client.initialize(&admin, &250, &treasury, &1000000, &86400);
 
@@ -350,8 +350,8 @@ fn test_mint_with_high_royalty() {
     let creator = Address::generate(&env);
     let treasury = Address::generate(&env);
 
-    let contract_id = env.register_contract(None, WutaWutaMarketplace);
-    let client = WutaWutaMarketplaceClient::new(&env, &contract_id);
+    let contract_id = env.register_contract(None, AxonMarketplace);
+    let client = AxonMarketplaceClient::new(&env, &contract_id);
 
     client.initialize(&admin, &250, &treasury, &1000000, &86400);
 
@@ -379,8 +379,8 @@ fn test_double_listing() {
     let creator = Address::generate(&env);
     let treasury = Address::generate(&env);
 
-    let contract_id = env.register_contract(None, WutaWutaMarketplace);
-    let client = WutaWutaMarketplaceClient::new(&env, &contract_id);
+    let contract_id = env.register_contract(None, AxonMarketplace);
+    let client = AxonMarketplaceClient::new(&env, &contract_id);
 
     client.initialize(&admin, &250, &treasury, &1000000, &86400);
 
@@ -412,8 +412,8 @@ fn test_unauthorized_listing() {
     let unauthorized = Address::generate(&env);
     let treasury = Address::generate(&env);
 
-    let contract_id = env.register_contract(None, WutaWutaMarketplace);
-    let client = WutaWutaMarketplaceClient::new(&env, &contract_id);
+    let contract_id = env.register_contract(None, AxonMarketplace);
+    let client = AxonMarketplaceClient::new(&env, &contract_id);
 
     client.initialize(&admin, &250, &treasury, &1000000, &86400);
 
@@ -445,8 +445,8 @@ fn test_offer_flow() {
     let treasury = Address::generate(&env);
     let payment_token = Address::generate(&env);
 
-    let contract_id = env.register_contract(None, WutaWutaMarketplace);
-    let client = WutaWutaMarketplaceClient::new(&env, &contract_id);
+    let contract_id = env.register_contract(None, AxonMarketplace);
+    let client = AxonMarketplaceClient::new(&env, &contract_id);
 
     client.initialize(&admin, &250, &treasury, &1000000, &86400);
 
@@ -498,8 +498,8 @@ fn test_cancel_offer() {
     let treasury = Address::generate(&env);
     let payment_token = Address::generate(&env);
 
-    let contract_id = env.register_contract(None, WutaWutaMarketplace);
-    let client = WutaWutaMarketplaceClient::new(&env, &contract_id);
+    let contract_id = env.register_contract(None, AxonMarketplace);
+    let client = AxonMarketplaceClient::new(&env, &contract_id);
 
     client.initialize(&admin, &250, &treasury, &1000000, &86400);
 

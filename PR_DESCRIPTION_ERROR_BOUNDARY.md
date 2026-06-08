@@ -2,7 +2,7 @@
 
 ## Summary
 
-This PR introduces a comprehensive Global Error Boundary component to the Muse AI Art Marketplace, ensuring graceful error handling that prevents app crashes while providing excellent user experience and developer debugging tools.
+This PR introduces a comprehensive Global Error Boundary component to the Kortex Network, ensuring graceful error handling that prevents app crashes while providing excellent user experience and developer debugging tools.
 
 ## 🎯 Problem Solved
 

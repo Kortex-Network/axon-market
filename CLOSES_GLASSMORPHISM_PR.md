@@ -1,7 +1,7 @@
 ## Closes PR Description
 
 ### Issue Addressed
-Implement Glassmorphism Art Card Hover Effects for the Wuta-Wuta AI Art Marketplace
+Implement Glassmorphism Art Card Hover Effects for the Axon Market AI Art Marketplace
 
 ### Solution Overview
 This PR introduces high-fidelity glassmorphism hover effects for AI art cards, revealing essential metadata through a frosted-glass overlay when users hover over artwork thumbnails.

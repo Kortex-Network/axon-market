@@ -90,7 +90,7 @@ const Sidebar = ({ navigation, activeTab, onTabChange, isOpen, onClose }) => {
             </div>
 
             <div className="bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/40 dark:to-blue-900/40 rounded-xl p-4 text-center">
-              <p className="text-sm font-semibold text-purple-900 dark:text-purple-200">Muse AI Art</p>
+              <p className="text-sm font-semibold text-purple-900 dark:text-purple-200">Kortex Network</p>
               <p className="text-xs text-purple-700/80 dark:text-purple-300/80 mt-1">Stellar Testnet v1.0</p>
             </div>
           </div>

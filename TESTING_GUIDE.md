@@ -1,8 +1,8 @@
-# Comprehensive Testing Guide for Wuta-Wuta Blockchain Engine
+# Comprehensive Testing Guide for Axon Market Blockchain Engine
 
 ## Overview
 
-This guide provides comprehensive testing strategies and procedures for the Wuta-Wuta AI-Human collaborative art marketplace. The testing suite ensures reliability, security, and performance of both smart contracts and frontend components.
+This guide provides comprehensive testing strategies and procedures for the Axon Market AI-Human collaborative art marketplace. The testing suite ensures reliability, security, and performance of both smart contracts and frontend components.
 
 ## Testing Architecture
 
@@ -330,4 +330,4 @@ For testing-related questions or issues:
 
 ---
 
-**Note**: This testing suite is designed to ensure the reliability and security of the Wuta-Wuta platform. Regular updates and maintenance are essential for continued effectiveness.
+**Note**: This testing suite is designed to ensure the reliability and security of the Axon Market platform. Regular updates and maintenance are essential for continued effectiveness.

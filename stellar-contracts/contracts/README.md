@@ -1,10 +1,10 @@
-# 🌟 WutaWuta Marketplace - Comprehensive Soroban Smart Contract
+# 🌟 Axon Market - Comprehensive Soroban Smart Contract
 
 > Advanced AI-generated art marketplace on Stellar blockchain with full trading functionality, artwork evolution, and royalty management
 
 ## 🚀 Overview
 
-The WutaWuta Marketplace is a comprehensive Soroban smart contract that powers the AI-generated art trading platform. It provides complete functionality for minting, listing, purchasing, and evolving AI-collaborative artworks on the Stellar network.
+The Axon Market is a comprehensive Soroban smart contract that powers the AI-generated art trading platform. It provides complete functionality for minting, listing, purchasing, and evolving AI-collaborative artworks on the Stellar network.
 
 ## ✨ Key Features
 
@@ -163,7 +163,7 @@ fn update_treasury(new_treasury: Address)
 ```bash
 # Clone the repository
 git clone https://github.com/olaleyeolajide81-sketch/Wuta-Wuta.git
-cd Wuta-Wuta/stellar-contracts
+cd axon-market/stellar-contracts
 
 # Install dependencies
 npm install
@@ -172,7 +172,7 @@ npm install
 rustup target add wasm32-unknown-unknown
 
 # Build the contract
-npm run build:wutawuta
+npm run build:axonmarket
 ```
 
 ## 🚀 Deployment
@@ -230,7 +230,7 @@ NETWORK_PASSPHRASE="Test SDF Future Network ; October 2022"
 
 ```bash
 # Run all contract tests
-npm run test:wutawuta
+npm run test:axonmarket
 
 # Run specific test
 cargo test test_mint_artwork --manifest-path contracts/Cargo.toml

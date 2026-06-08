@@ -47,7 +47,7 @@ The Minting Success Celebration feature adds a canvas-confetti animation that tr
 
 ```bash
 # Navigate to project directory
-cd /workspaces/Wuta-Wuta
+cd /workspaces/Axon Market
 
 # Verify canvas-confetti is installed
 npm list canvas-confetti
@@ -55,7 +55,7 @@ npm list canvas-confetti
 
 **Expected Output:**
 ```
-muse-art-marketplace@1.0.0 /workspaces/Wuta-Wuta
+muse-art-marketplace@1.0.0 /workspaces/Axon Market
 └── canvas-confetti@1.x.x
 ```
 

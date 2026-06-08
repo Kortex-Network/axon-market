@@ -2,7 +2,7 @@
 
 ## Executive Summary
 
-The "Minting Success Celebration" feature has been successfully implemented for the Wuta-Wuta NFT marketplace. When a user completes the minting process for their AI-generated artwork and receives Stellar transaction confirmation, an elegant confetti animation automatically triggers to celebrate the achievement.
+The "Minting Success Celebration" feature has been successfully implemented for the Axon Market NFT marketplace. When a user completes the minting process for their AI-generated artwork and receives Stellar transaction confirmation, an elegant confetti animation automatically triggers to celebrate the achievement.
 
 ---
 

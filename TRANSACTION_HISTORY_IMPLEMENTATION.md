@@ -1,7 +1,7 @@
 # Transaction History Implementation
 
 ## Overview
-This implementation adds a comprehensive Transaction History page to the Wuta-Wuta AI Art Marketplace, allowing users to view their last 10 Stellar transactions related to the Wuta-Wuta contract via the Horizon API.
+This implementation adds a comprehensive Transaction History page to the Axon Market AI Art Marketplace, allowing users to view their last 10 Stellar transactions related to the Axon Market contract via the Horizon API.
 
 ## Features Implemented
 
@@ -17,7 +17,7 @@ This implementation adds a comprehensive Transaction History page to the Wuta-Wu
 ### 2. Store Integration (`src/store/museStore.js`)
 - **Horizon API Integration**: Added Horizon server initialization
 - **Transaction Fetching**: Functions to fetch transactions from Horizon API
-- **Wuta-Wuta Filtering**: Filter transactions related to the Wuta-Wuta contract
+- **Axon Market Filtering**: Filter transactions related to the Axon Market contract
 - **Transaction Formatting**: Standardize transaction data for UI display
 - **Error Handling**: Comprehensive error handling for API failures
 
@@ -36,9 +36,9 @@ This implementation adds a comprehensive Transaction History page to the Wuta-Wu
   - `page={page}` (pagination support)
 
 ### Transaction Filtering
-- Filters transactions related to Wuta-Wuta contract
+- Filters transactions related to Axon Market contract
 - Checks for `invoke_host_function` operations
-- Matches contract ID with Wuta-Wuta marketplace contract
+- Matches contract ID with Axon Market marketplace contract
 
 ## Component Structure
 
@@ -166,7 +166,7 @@ All functionality uses existing project dependencies.
 
 1. **Connect Wallet**: Connect your Stellar wallet to the application
 2. **Navigate**: Click on "Transactions" in the sidebar menu
-3. **View History**: See your last 10 Wuta-Wuta related transactions
+3. **View History**: See your last 10 Axon Market related transactions
 4. **Filter**: Use filters to narrow down transactions
 5. **Search**: Search for specific transactions
 6. **Explore**: Click "Explorer" to view detailed transaction info
@@ -187,4 +187,4 @@ All functionality uses existing project dependencies.
 
 ## Conclusion
 
-This implementation provides a comprehensive transaction history feature that integrates seamlessly with the existing Wuta-Wuta marketplace architecture. It follows established patterns and maintains consistency with the existing codebase while providing valuable functionality for users to track their Stellar transactions related to the platform.
+This implementation provides a comprehensive transaction history feature that integrates seamlessly with the existing Axon Market marketplace architecture. It follows established patterns and maintains consistency with the existing codebase while providing valuable functionality for users to track their Stellar transactions related to the platform.

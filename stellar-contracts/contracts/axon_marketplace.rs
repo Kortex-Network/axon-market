@@ -1,5 +1,5 @@
 // ============================================================================
-// wutawuta_marketplace.rs — Optimized for Soroban storage footprint (Issue #42)
+// axon_marketplace.rs — Optimized for Soroban storage footprint (Issue #42)
 //
 // Storage optimizations applied:
 // 1. DataKey enum for all storage keys — eliminates type-based collisions and
@@ -158,10 +158,10 @@ pub struct RoyaltyPayment {
 // ---------------------------------------------------------------------------
 
 #[contract]
-pub struct WutaWutaMarketplace;
+pub struct AxonMarketplace;
 
 #[contractimpl]
-impl WutaWutaMarketplace {
+impl AxonMarketplace {
     // -----------------------------------------------------------------------
     // Initialization
     // -----------------------------------------------------------------------

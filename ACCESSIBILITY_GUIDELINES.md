@@ -1,6 +1,6 @@
-# Accessibility Guidelines for Wuta-Wuta
+# Accessibility Guidelines for Axon Market
 
-This document outlines the accessibility improvements implemented in the Wuta-Wuta AI Art Marketplace to ensure compliance with WCAG 2.1 AA standards.
+This document outlines the accessibility improvements implemented in the Axon Market AI Art Marketplace to ensure compliance with WCAG 2.1 AA standards.
 
 ## Implemented Improvements
 

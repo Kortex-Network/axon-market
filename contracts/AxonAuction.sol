@@ -6,8 +6,8 @@ import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 /**
- * @title WutaAuction
- * @notice Escrow-based, time-bound auction house for Wuta-Wuta NFTs.
+ * @title AxonAuction
+ * @notice Escrow-based, time-bound auction house for Axon Market NFTs.
  *
  * Flow:
  *  1. Seller calls `createAuction` — the NFT is transferred into this contract.
@@ -23,7 +23,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
  *  - ReentrancyGuard on all state-changing fund flows.
  *  - Pull-pattern for accumulated marketplace fees (`withdraw`).
  */
-contract WutaAuction is ReentrancyGuard, Ownable {
+contract AxonAuction is ReentrancyGuard, Ownable {
 
     // ─────────────────────────────────────────────────────────
     //  Constants
@@ -116,15 +116,15 @@ contract WutaAuction is ReentrancyGuard, Ownable {
     // ─────────────────────────────────────────────────────────
 
     modifier auctionExists(uint256 auctionId) {
-        require(auctions[auctionId].seller != address(0), "WutaAuction: auction does not exist");
+        require(auctions[auctionId].seller != address(0), "AxonAuction: auction does not exist");
         _;
     }
 
     modifier auctionActive(uint256 auctionId) {
         Auction storage a = auctions[auctionId];
-        require(!a.ended, "WutaAuction: auction already ended");
-        require(!a.cancelled, "WutaAuction: auction cancelled");
-        require(block.timestamp < a.endTime, "WutaAuction: auction time expired");
+        require(!a.ended, "AxonAuction: auction already ended");
+        require(!a.cancelled, "AxonAuction: auction cancelled");
+        require(block.timestamp < a.endTime, "AxonAuction: auction time expired");
         _;
     }
 
@@ -151,16 +151,16 @@ contract WutaAuction is ReentrancyGuard, Ownable {
         uint256 reservePrice,
         uint256 duration
     ) external nonReentrant returns (uint256 auctionId) {
-        require(nftContract != address(0), "WutaAuction: invalid NFT contract");
-        require(startingPrice > 0,          "WutaAuction: starting price must be > 0");
-        require(reservePrice >= startingPrice, "WutaAuction: reserve must be >= starting price");
-        require(duration >= MIN_DURATION,   "WutaAuction: duration too short");
-        require(duration <= MAX_DURATION,   "WutaAuction: duration too long");
+        require(nftContract != address(0), "AxonAuction: invalid NFT contract");
+        require(startingPrice > 0,          "AxonAuction: starting price must be > 0");
+        require(reservePrice >= startingPrice, "AxonAuction: reserve must be >= starting price");
+        require(duration >= MIN_DURATION,   "AxonAuction: duration too short");
+        require(duration <= MAX_DURATION,   "AxonAuction: duration too long");
 
         // Ensure the caller owns the token
         require(
             IERC721(nftContract).ownerOf(tokenId) == msg.sender,
-            "WutaAuction: caller is not token owner"
+            "AxonAuction: caller is not token owner"
         );
 
         // Pull the NFT into escrow
@@ -214,13 +214,13 @@ contract WutaAuction is ReentrancyGuard, Ownable {
         auctionActive(auctionId)
     {
         Auction storage a = auctions[auctionId];
-        require(msg.sender != a.seller, "WutaAuction: seller cannot bid");
+        require(msg.sender != a.seller, "AxonAuction: seller cannot bid");
 
         uint256 minimumBid = a.highestBid == 0
             ? a.startingPrice
             : (a.highestBid * (10_000 + MIN_BID_INCREMENT_BPS)) / 10_000;
 
-        require(msg.value >= minimumBid, "WutaAuction: bid below minimum");
+        require(msg.value >= minimumBid, "AxonAuction: bid below minimum");
 
         // Refund the previous highest bidder
         if (a.highestBidder != address(0)) {
@@ -262,9 +262,9 @@ contract WutaAuction is ReentrancyGuard, Ownable {
         auctionExists(auctionId)
     {
         Auction storage a = auctions[auctionId];
-        require(!a.ended,     "WutaAuction: already ended");
-        require(!a.cancelled, "WutaAuction: auction cancelled");
-        require(block.timestamp >= a.endTime, "WutaAuction: auction still running");
+        require(!a.ended,     "AxonAuction: already ended");
+        require(!a.cancelled, "AxonAuction: auction cancelled");
+        require(block.timestamp >= a.endTime, "AxonAuction: auction still running");
 
         a.ended = true;
 
@@ -331,10 +331,10 @@ contract WutaAuction is ReentrancyGuard, Ownable {
         auctionExists(auctionId)
     {
         Auction storage a = auctions[auctionId];
-        require(msg.sender == a.seller, "WutaAuction: not the seller");
-        require(!a.ended,     "WutaAuction: already ended");
-        require(!a.cancelled, "WutaAuction: already cancelled");
-        require(a.highestBidder == address(0), "WutaAuction: bids already placed; wait for endTime");
+        require(msg.sender == a.seller, "AxonAuction: not the seller");
+        require(!a.ended,     "AxonAuction: already ended");
+        require(!a.cancelled, "AxonAuction: already cancelled");
+        require(a.highestBidder == address(0), "AxonAuction: bids already placed; wait for endTime");
 
         a.cancelled = true;
 
@@ -353,7 +353,7 @@ contract WutaAuction is ReentrancyGuard, Ownable {
      * @param newFee  New fee in basis points. Max 1000 (10 %).
      */
     function setMarketplaceFee(uint256 newFee) external onlyOwner {
-        require(newFee <= 1000, "WutaAuction: fee cannot exceed 10%");
+        require(newFee <= 1000, "AxonAuction: fee cannot exceed 10%");
         emit MarketplaceFeeUpdated(marketplaceFee, newFee);
         marketplaceFee = newFee;
     }
@@ -363,7 +363,7 @@ contract WutaAuction is ReentrancyGuard, Ownable {
      */
     function withdraw() external onlyOwner nonReentrant {
         uint256 amount = accumulatedFees;
-        require(amount > 0, "WutaAuction: no fees to withdraw");
+        require(amount > 0, "AxonAuction: no fees to withdraw");
         accumulatedFees = 0;
         _safeTransferEth(owner(), amount);
     }
@@ -430,11 +430,11 @@ contract WutaAuction is ReentrancyGuard, Ownable {
      */
     function _safeTransferEth(address recipient, uint256 amount) internal {
         (bool success, ) = recipient.call{value: amount}("");
-        require(success, "WutaAuction: ETH transfer failed");
+        require(success, "AxonAuction: ETH transfer failed");
     }
 
     /// Fallback — reject plain ETH sends to keep accounting clean.
     receive() external payable {
-        revert("WutaAuction: use placeBid");
+        revert("AxonAuction: use placeBid");
     }
 }

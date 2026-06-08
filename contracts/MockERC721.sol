@@ -5,7 +5,7 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 /**
  * @title MockERC721
- * @notice Minimal ERC-721 used in WutaAuction tests.
+ * @notice Minimal ERC-721 used in AxonAuction tests.
  *         Anyone can mint any tokenId to any address.
  */
 contract MockERC721 is ERC721 {

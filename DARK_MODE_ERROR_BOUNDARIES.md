@@ -1,6 +1,6 @@
 # Dark Mode & Error Boundaries Implementation
 
-This document outlines the implementation of dark mode support and comprehensive error boundary components for the Wuta-Wuta AI Art Marketplace.
+This document outlines the implementation of dark mode support and comprehensive error boundary components for the Axon Market AI Art Marketplace.
 
 ## Issues Addressed
 

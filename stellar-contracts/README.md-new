@@ -8,7 +8,7 @@ The project now includes automated CI/CD for Soroban contracts with **mainnet fo
 cd stellar-contracts
 
 # Build
-npm run build:wutawuta
+npm run build:axonmarket
 
 # Gas prediction on mainnet fork
 npm run test:gas

@@ -1,10 +1,10 @@
-# 🌟 Muse AI Art Marketplace - Stellar Smart Contracts
+# 🌟 Kortex Network - Stellar Smart Contracts
 
 > Advanced NFT marketplace and asset tokenization on Stellar blockchain for AI-human collaborative art
 
 ## 🚀 Overview
 
-This repository contains the Stellar smart contracts for the Muse AI Art Marketplace, enabling:
+This repository contains the Stellar smart contracts for the Kortex Network, enabling:
 - **Asset Tokenization** - Create and manage digital art assets on Stellar
 - **NFT Marketplace** - Buy, sell, and trade AI-generated art
 - **Low-Fee Trading** - Efficient marketplace with minimal fees
@@ -261,7 +261,7 @@ The project now includes automated CI/CD for Soroban contracts with **mainnet fo
 cd stellar-contracts
 
 # Build
-npm run build:wutawuta
+npm run build:axonmarket
 
 # Gas prediction on mainnet fork
 npm run test:gas

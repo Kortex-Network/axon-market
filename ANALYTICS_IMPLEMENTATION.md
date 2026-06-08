@@ -2,7 +2,7 @@
 
 ## Overview
 
-This document describes the comprehensive analytics system implemented for the Wuta-Wuta AI art marketplace. The system provides detailed tracking of user behavior, artwork interactions, and conversion metrics while maintaining strict privacy controls and GDPR compliance.
+This document describes the comprehensive analytics system implemented for the Axon Market AI art marketplace. The system provides detailed tracking of user behavior, artwork interactions, and conversion metrics while maintaining strict privacy controls and GDPR compliance.
 
 ## Features
 

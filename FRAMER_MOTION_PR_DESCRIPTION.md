@@ -1,7 +1,7 @@
 ## 🎨 Implement Framer Motion Page Transitions
 
 ### Summary
-Adds smooth, fluid page transitions to the Wuta-Wuta marketplace SPA using Framer Motion, enhancing user experience with elegant fade and slide animations between all main sections.
+Adds smooth, fluid page transitions to the Axon Market marketplace SPA using Framer Motion, enhancing user experience with elegant fade and slide animations between all main sections.
 
 ### 🔄 Changes Made
 - **New PageTransition Component** (`src/components/PageTransition.js`)

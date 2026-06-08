@@ -1,8 +1,8 @@
-# 🌟 Comprehensive Soroban Smart Contract for Wuta-Wuta AI Art Trading
+# 🌟 Comprehensive Soroban Smart Contract for Axon Market AI Art Trading
 
 ## 📋 Summary
 
-This pull request implements a complete, production-ready Soroban smart contract for the Wuta-Wuta AI-generated art trading platform on the Stellar network. The contract provides comprehensive functionality for asset tokenization, marketplace operations, artwork evolution, and royalty management with proper error handling and event emission.
+This pull request implements a complete, production-ready Soroban smart contract for the Axon Market AI-generated art trading platform on the Stellar network. The contract provides comprehensive functionality for asset tokenization, marketplace operations, artwork evolution, and royalty management with proper error handling and event emission.
 
 ## ✨ Key Features Implemented
 
@@ -32,8 +32,8 @@ This pull request implements a complete, production-ready Soroban smart contract
 ## 📁 Files Added/Modified
 
 ### 🆕 New Files
-- `stellar-contracts/contracts/WutaWutaMarketplace.rs` - Main smart contract (1,200+ lines)
-- `stellar-contracts/contracts/test_wutawuta.rs` - Comprehensive test suite (400+ lines)
+- `stellar-contracts/contracts/AxonMarketMarketplace.rs` - Main smart contract (1,200+ lines)
+- `stellar-contracts/contracts/test_AxonMarket.rs` - Comprehensive test suite (400+ lines)
 - `stellar-contracts/contracts/Cargo.toml` - Rust project configuration
 - `stellar-contracts/contracts/README.md` - Detailed documentation and usage guide
 
@@ -192,10 +192,10 @@ get_artwork(), get_active_listings(), get_token_owner()
 
 ```bash
 # Run all tests
-npm run test:wutawuta
+npm run test:AxonMarket
 
 # Build contract
-npm run build:wutawuta
+npm run build:AxonMarket
 
 # Deploy to testnet
 npm run deploy:testnet

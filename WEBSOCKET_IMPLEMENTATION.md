@@ -1,6 +1,6 @@
 # WebSocket Real-Time Updates Implementation
 
-This document describes the implementation of real-time WebSocket functionality for the Wuta-Wuta AI art marketplace, providing live price updates, new artwork notifications, and bidding activity.
+This document describes the implementation of real-time WebSocket functionality for the Axon Market AI art marketplace, providing live price updates, new artwork notifications, and bidding activity.
 
 ## Overview
 
@@ -302,4 +302,4 @@ API endpoints include rate limiting to prevent abuse.
 
 ## Conclusion
 
-This WebSocket implementation provides a robust foundation for real-time features in the Wuta-Wuta marketplace. The modular architecture allows for easy extension and maintenance while providing excellent user experience with live updates and notifications.
+This WebSocket implementation provides a robust foundation for real-time features in the Axon Market marketplace. The modular architecture allows for easy extension and maintenance while providing excellent user experience with live updates and notifications.

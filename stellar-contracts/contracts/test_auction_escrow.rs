@@ -9,12 +9,12 @@ use soroban_sdk::{
 };
 
 // Inline the contract module (Soroban test convention)
-mod wutawuta_marketplace;
-use wutawuta_marketplace::{WutaWutaMarketplace, WutaWutaMarketplaceClient};
+mod axon_marketplace;
+use axon_marketplace::{AxonMarketplace, AxonMarketplaceClient};
 
 // ─── Shared test helpers ─────────────────────────────────────────────────────
 
-fn setup_env<'a>() -> (Env, WutaWutaMarketplaceClient<'a>, Address, Address, Address) {
+fn setup_env<'a>() -> (Env, AxonMarketplaceClient<'a>, Address, Address, Address) {
     // NOTE: We return owned values; caller is responsible for lifetime.
     // In practice, Soroban test envs live for the entire test.
     panic!("use setup() directly in each test")
@@ -37,8 +37,8 @@ impl Setup {
         let creator  = Address::generate(&env);
         let treasury = Address::generate(&env);
 
-        let contract_id = env.register_contract(None, WutaWutaMarketplace {});
-        let client = WutaWutaMarketplaceClient::new(&env, &contract_id);
+        let contract_id = env.register_contract(None, AxonMarketplace {});
+        let client = AxonMarketplaceClient::new(&env, &contract_id);
 
         client.initialize(
             &admin,
@@ -51,8 +51,8 @@ impl Setup {
         Setup { env, admin, creator, treasury, contract_id }
     }
 
-    fn client(&self) -> WutaWutaMarketplaceClient<'_> {
-        WutaWutaMarketplaceClient::new(&self.env, &self.contract_id)
+    fn client(&self) -> AxonMarketplaceClient<'_> {
+        AxonMarketplaceClient::new(&self.env, &self.contract_id)
     }
 
     /// Mint a basic artwork and return its token_id.

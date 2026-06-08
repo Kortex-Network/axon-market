@@ -331,7 +331,7 @@ const useMuseStore = create((set, get) => ({
     }
   },
 
-  fetchWutaWutaTransactions: async (address, limit = 10, page = 1) => {
+  fetchAxonMarketTransactions: async (address, limit = 10, page = 1) => {
     if (!address) return [];
 
     try {

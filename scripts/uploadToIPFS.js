@@ -43,7 +43,7 @@ async function pinFile(filePath, artworkId) {
     "pinataMetadata",
     JSON.stringify({
       name: `muse-artwork-${artworkId}`,
-      keyvalues: { project: "Wuta-Wuta", type: "artwork", artworkId },
+      keyvalues: { project: "Axon Market", type: "artwork", artworkId },
     }),
   );
   form.append("pinataOptions", JSON.stringify({ cidVersion: 1 }));
@@ -67,7 +67,7 @@ async function pinMetadata(metadata, artworkId) {
       pinataContent: metadata,
       pinataMetadata: {
         name: `muse-metadata-${artworkId}`,
-        keyvalues: { project: "Wuta-Wuta", type: "metadata", artworkId },
+        keyvalues: { project: "Axon Market", type: "metadata", artworkId },
       },
       pinataOptions: { cidVersion: 1 },
     },

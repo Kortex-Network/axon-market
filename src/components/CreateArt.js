@@ -1,6 +1,6 @@
 import React, { useMemo, useState, useEffect } from 'react';
 import { CheckCircle2, Cpu, Plus, RefreshCw, Settings2, Sparkles, Loader2, Eye } from 'lucide-react';
-import { sendPrompt } from '../ai/wutaAi';
+import { sendPrompt } from '../ai/axonAi';
 import { getImageSrc } from '../utils/image';
 import { useMuseStore } from '../store/museStore';
 import { useTransactionNotificationStore } from '../store/transactionNotificationStore';

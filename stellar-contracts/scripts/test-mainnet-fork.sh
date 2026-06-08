@@ -9,7 +9,7 @@ echo \"🚀 Starting Mainnet Fork Tests & Gas Prediction...\"
 # Config
 RPC_URL=\"${SOROBAN_RPC_URL:-http://127.0.0.1:8000}\"
 NETWORK=\"mainnet\"
-WASM_PATH=\"${1:-../contracts/target/wasm32-unknown-unknown/release/wutawuta_marketplace.wasm}\"
+WASM_PATH=\"${1:-../contracts/target/wasm32-unknown-unknown/release/axon_marketplace.wasm}\"
 GAS_THRESHOLDS=\"../.gas-thresholds.json\"
 
 # Check prerequisites

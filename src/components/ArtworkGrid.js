@@ -204,7 +204,7 @@ const ArtworkGrid = ({
   return (
     <>
       <style>{`
-        @keyframes wuta-shimmer {
+        @keyframes axon-shimmer {
           0%   { background-position: -600px 0; }
           100% { background-position:  600px 0; }
         }
@@ -216,7 +216,7 @@ const ArtworkGrid = ({
             #f3f4f6 75%
           );
           background-size: 600px 100%;
-          animation: wuta-shimmer 1.6s ease-in-out infinite;
+          animation: axon-shimmer 1.6s ease-in-out infinite;
         }
       `}</style>
 

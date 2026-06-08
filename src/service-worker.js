@@ -78,7 +78,7 @@ registerRoute(
 );
 
 // Background Sync for transactions or art creation
-const bgSyncPlugin = new BackgroundSyncPlugin('wuta-sync-queue', {
+const bgSyncPlugin = new BackgroundSyncPlugin('axon-sync-queue', {
   maxRetentionTime: 24 * 60, // Retry for max 24 Hours (in minutes)
 });
 

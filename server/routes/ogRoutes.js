@@ -32,8 +32,8 @@ router.get('/artwork/:id', async (req, res) => {
     const logoPath = path.join(__dirname, '../../public/logo.png');
     let logoSvg = '';
     
-    // Create Wuta-Wuta logo SVG inline
-    const wutaLogo = `
+    // Create Axon Market logo SVG inline
+    const axonLogo = `
       <svg width="60" height="60" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
         <defs>
           <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -42,7 +42,7 @@ router.get('/artwork/:id', async (req, res) => {
           </linearGradient>
         </defs>
         <circle cx="50" cy="50" r="45" fill="url(#logoGradient)" />
-        <text x="50" y="65" font-size="50" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-weight="bold">W</text>
+        <text x="50" y="65" font-size="40" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-weight="bold">A</text>
       </svg>
     `;
 
@@ -72,14 +72,14 @@ router.get('/artwork/:id', async (req, res) => {
           gap: '20px',
           marginBottom: '20px'
         }}>
-          <div dangerouslyHTML={wutaLogo} />
+          <div dangerouslyHTML={axonLogo} />
           <div>
             <h1 style={{
               fontSize: '32px',
               fontWeight: 'bold',
               color: '#1f2937',
               margin: '0'
-            }}>Wuta-Wuta</h1>
+            }}>Axon Market</h1>
             <p style={{
               fontSize: '16px',
               color: '#6b7280',

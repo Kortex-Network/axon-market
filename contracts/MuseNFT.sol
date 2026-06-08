@@ -105,7 +105,7 @@ contract MuseNFT is ERC721URIStorage, Ownable, ReentrancyGuard {
         _;
     }
 
-    constructor() ERC721("Muse AI Art", "MUSE") {
+    constructor() ERC721("Kortex Network", "MUSE") {
         evolutionTreasury = msg.sender;
     }
 

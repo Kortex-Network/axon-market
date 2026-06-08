@@ -1,11 +1,11 @@
 #!/bin/bash
 
-# Setup Testing Environment for Wuta-Wuta Project
+# Setup Testing Environment for Axon Market Project
 # This script sets up the complete testing environment
 
 set -e
 
-echo "🚀 Setting up Wuta-Wuta Testing Environment..."
+echo "🚀 Setting up Axon Market Testing Environment..."
 
 # Check if Node.js is installed
 if ! command -v node &> /dev/null; then

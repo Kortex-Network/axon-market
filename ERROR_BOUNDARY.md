@@ -180,6 +180,6 @@ For issues related to the Error Boundary:
 ## Repository
 
 The implementation is available in the `feature/global-error-boundary` branch:
-https://github.com/akordavid373/Wuta-Wuta/tree/feature/global-error-boundary
+https://github.com/akordavid373/Axon Market/tree/feature/global-error-boundary
 
 Create a pull request to merge into main when ready.

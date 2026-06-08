@@ -18,7 +18,7 @@ import { useWalletStore } from '../store/walletStore';
 import CopyButton from './CopyButton';
 
 const TransactionHistory = () => {
-  const { fetchWutaWutaTransactions } = useMuseStore();
+  const { fetchAxonMarketTransactions } = useMuseStore();
   const { address } = useWalletStore();
   
   const [transactions, setTransactions] = useState([]);
@@ -43,7 +43,7 @@ const TransactionHistory = () => {
 
     try {
       // Use store function to fetch transactions
-      const transactionData = await fetchWutaWutaTransactions(address, 20, page);
+      const transactionData = await fetchAxonMarketTransactions(address, 20, page);
       
       setTransactions(transactionData);
       setTotalPages(1); // Simplified for now
@@ -54,7 +54,7 @@ const TransactionHistory = () => {
     } finally {
       setIsLoading(false);
     }
-  }, [address, fetchWutaWutaTransactions, page]);
+  }, [address, fetchAxonMarketTransactions, page]);
 
   useEffect(() => {
     if (address) {
@@ -125,7 +125,7 @@ const TransactionHistory = () => {
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.setAttribute('href', url);
-    link.setAttribute('download', `wuta_wuta_transactions_${new Date().toISOString().split('T')[0]}.csv`);
+    link.setAttribute('download', `axon_market_transactions_${new Date().toISOString().split('T')[0]}.csv`);
     link.style.visibility = 'hidden';
     document.body.appendChild(link);
     link.click();
@@ -207,7 +207,7 @@ const TransactionHistory = () => {
           <h1 className="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-purple-600 to-blue-600 mb-2">
             Transaction History
           </h1>
-          <p className="text-gray-600 font-medium">Manage and audit your blockchain activity on Wuta-Wuta</p>
+          <p className="text-gray-600 font-medium">Manage and audit your blockchain activity on Axon Market</p>
         </div>
         <div className="flex items-center gap-3">
           <button

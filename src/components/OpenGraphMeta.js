@@ -8,12 +8,12 @@ import { Helmet } from 'react-helmet';
  * Usage: Include in your page component to enable rich previews when shared on social media
  */
 const OpenGraphMeta = ({
-  title = 'Wuta-Wuta - AI-Human Art Marketplace',
+  title = 'Axon Market - AI-Human Art Marketplace',
   description = 'Discover and collect unique AI-generated artworks. Where artificial creativity meets human imagination.',
   image,
   url,
   type = 'website',
-  siteName = 'Wuta-Wuta',
+  siteName = 'Axon Market',
   twitterCard = 'summary_large_image',
   artworkData = null
 }) => {

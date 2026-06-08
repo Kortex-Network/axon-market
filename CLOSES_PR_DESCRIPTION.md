@@ -4,7 +4,7 @@
 This pull request addresses the following GitHub issue:
 
 **"Prompt History" Sidebar**
-- **Repository**: akordavid373/Wuta-Wuta
+- **Repository**: akordavid373/Axon Market
 - **Description**: A collapsible sidebar that stores the user's recent AI prompts locally so they can quickly re-generate variations
 
 ## Implementation Summary

@@ -213,7 +213,7 @@ const MintingDashboard = lazy(() => import('./components/MintingDashboard'));
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd wuta-wuta
+cd Axon Market
 
 # Install dependencies
 npm install
@@ -282,8 +282,8 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 For support and questions:
 - Create an issue on GitHub
 - Join our Discord community
-- Email: support@wuta-wuta.com
+- Email: support@Axon Market.com
 
 ---
 
-**Built with ❤️ for the Wuta-Wuta AI Art Marketplace**
+**Built with ❤️ for the Axon Market AI Art Marketplace**

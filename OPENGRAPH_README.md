@@ -4,12 +4,12 @@ This document explains how to use the OpenGraph image generation feature for soc
 
 ## Overview
 
-The Wuta-Wuta marketplace now supports dynamic OpenGraph (OG) image generation using [Satori](https://github.com/vercel/satori). When artworks are shared on social media platforms like Twitter/X, Facebook, or LinkedIn, they will display beautiful preview cards with:
+The Axon Market marketplace now supports dynamic OpenGraph (OG) image generation using [Satori](https://github.com/vercel/satori). When artworks are shared on social media platforms like Twitter/X, Facebook, or LinkedIn, they will display beautiful preview cards with:
 
 - Artwork image
 - Title and creator information
 - Price information
-- Wuta-Wuta branding
+- Axon Market branding
 
 ## Components
 
@@ -59,7 +59,7 @@ function ArtworkPage({ artwork }) {
   return (
     <>
       <OpenGraphMeta
-        title={`${artwork.title} | Wuta-Wuta`}
+        title={`${artwork.title} | Axon Market`}
         description={`Discover "${artwork.title}" - A unique AI-generated artwork`}
         artworkData={{
           id: artwork.id,
@@ -81,12 +81,12 @@ function ArtworkPage({ artwork }) {
 
 | Prop           | Type   | Default                    | Description                              |
 |----------------|--------|----------------------------|------------------------------------------|
-| `title`        | string | 'Wuta-Wuta - ...'          | Page title                               |
+| `title`        | string | 'Axon Market - ...'          | Page title                               |
 | `description`  | string | Default marketplace desc   | Page description                         |
 | `image`        | string | '/og-default.png'          | Static image URL (fallback)              |
 | `url`          | string | Current page URL           | Canonical URL of the page                |
 | `type`         | string | 'website'                  | OG type (website, article, etc.)         |
-| `siteName`     | string | 'Wuta-Wuta'                | Site name                                |
+| `siteName`     | string | 'Axon Market'                | Site name                                |
 | `twitterCard`  | string | 'summary_large_image'      | Twitter card type                        |
 | `artworkData`  | object | null                       | If provided, generates dynamic OG image  |
 
@@ -200,7 +200,7 @@ To add custom fonts:
   image="/custom-og-image.jpg"
   url="https://muse-art-marketplace.com/artwork/cosmic-dreams"
   type="article"
-  siteName="Wuta-Wuta Marketplace"
+  siteName="Axon Market Marketplace"
   twitterCard="summary_large_image"
   artworkData={{
     id: 'cosmic-dreams-001',

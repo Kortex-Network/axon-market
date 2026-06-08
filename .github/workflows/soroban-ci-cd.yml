@@ -59,7 +59,7 @@ jobs:
       - name: 🔨 Build contracts
         run: |
           cd stellar-contracts
-          npm run build:wutawuta
+          npm run build:axonmarket
 
       - name: 🔬 Run Rust tests
         run: |

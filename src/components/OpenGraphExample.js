@@ -12,7 +12,7 @@ export function HomePage() {
     <>
       <OpenGraphMeta />
       <div>
-        <h1>Welcome to Wuta-Wuta</h1>
+        <h1>Welcome to Axon Market</h1>
         <p>AI-Human Art Marketplace</p>
       </div>
     </>
@@ -32,7 +32,7 @@ export function ArtworkPage({ artwork }) {
   return (
     <>
       <OpenGraphMeta
-        title={`${artwork.title} | Wuta-Wuta`}
+        title={`${artwork.title} | Axon Market`}
         description={`Discover "${artwork.title}" - ${artwork.description || 'A unique AI-generated artwork'}`}
         artworkData={artworkData}
         type="article"
@@ -51,7 +51,7 @@ export function CollectionPage() {
   return (
     <>
       <OpenGraphMeta
-        title="My Collection | Wuta-Wuta"
+        title="My Collection | Axon Market"
         description="Explore my curated collection of AI-human collaborative artworks"
         type="website"
       />

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { sendPrompt } from '../ai/wutaAi';
+import { sendPrompt } from '../ai/axonAi';
 
 const AiPrompt = () => {
   const [prompt, setPrompt] = useState('');

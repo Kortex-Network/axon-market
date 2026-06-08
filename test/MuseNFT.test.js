@@ -30,7 +30,7 @@ describe("MuseNFT", function () {
 
     it("Should have correct name and symbol", async function () {
       const { contract } = await loadFixture(deployMuseNFTFixture);
-      expect(await contract.name()).to.equal("Muse AI Art");
+      expect(await contract.name()).to.equal("Kortex Network");
       expect(await contract.symbol()).to.equal("MUSE");
     });
   });

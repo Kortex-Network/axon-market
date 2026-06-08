@@ -1,10 +1,10 @@
-# Testing Guide for Wuta-Wuta AI Art Marketplace
+# Testing Guide for Axon Market AI Art Marketplace
 
-This document provides comprehensive information about the testing setup and procedures for the Wuta-Wuta blockchain project.
+This document provides comprehensive information about the testing setup and procedures for the Axon Market blockchain project.
 
 ## Overview
 
-The Wuta-Wuta project includes a comprehensive testing suite covering:
+The Axon Market project includes a comprehensive testing suite covering:
 - Smart contract testing with Hardhat
 - Frontend component testing with React Testing Library
 - Integration testing across contracts

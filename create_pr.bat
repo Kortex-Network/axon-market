@@ -1,10 +1,10 @@
 @echo off
-echo 🚀 Creating Pull Request for Wuta-Wuta Soroban Smart Contract...
+echo 🚀 Creating Pull Request for Axon Market Soroban Smart Contract...
 echo.
 echo 📋 PR Details:
 echo   - Repository: https://github.com/olaleyeolajide81-sketch/Wuta-Wuta.git
 echo   - Branch: feature/automated-testing-suite -> main
-echo   - Title: "🌟 Comprehensive Soroban Smart Contract for Wuta-Wuta AI Art Trading"
+echo   - Title: "🌟 Comprehensive Soroban Smart Contract for Axon Market AI Art Trading"
 echo.
 echo 🔗 Direct PR Link:
 echo   https://github.com/olaleyeolajide81-sketch/Wuta-Wuta/compare/main...feature/automated-testing-suite

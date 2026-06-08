@@ -28,7 +28,7 @@ export const getNonce = (req: Request, res: Response, next: NextFunction): void 
     const { walletAddress } = req.body as z.infer<typeof NonceRequestSchema>;
 
     // TODO: persist nonce in DB / Redis with TTL
-    const nonce = `wuta-wuta-login-${Date.now()}-${Math.random().toString(36).slice(2)}`;
+    const nonce = `axon-market-login-${Date.now()}-${Math.random().toString(36).slice(2)}`;
 
     res.status(200).json({
       success: true,

@@ -322,7 +322,7 @@ const useFavoritesStore = create(
       },
     }),
     {
-      name: 'wuta-favorites-storage',
+      name: 'axon-favorites-storage',
       partialize: (state) => ({
         // Only persist these fields
         favorites: state.favorites,

@@ -19,10 +19,10 @@
   <circle cx="600" cy="250" r="80" fill="white" opacity="0.3" />
   
   <!-- W Letter -->
-  <text x="600" y="290" font-family="Arial, sans-serif" font-size="120" font-weight="bold" fill="white" text-anchor="middle">W</text>
+  <text x="600" y="290" font-family="Arial, sans-serif" font-size="100" font-weight="bold" fill="white" text-anchor="middle">A</text>
   
   <!-- Title -->
-  <text x="600" y="420" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="white" text-anchor="middle">Wuta-Wuta</text>
+  <text x="600" y="420" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="white" text-anchor="middle">Axon Market</text>
   
   <!-- Subtitle -->
   <text x="600" y="470" font-family="Arial, sans-serif" font-size="24" fill="rgba(255,255,255,0.9)" text-anchor="middle">AI-Human Art Marketplace</text>

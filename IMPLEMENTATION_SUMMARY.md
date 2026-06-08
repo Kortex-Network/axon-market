@@ -1,7 +1,7 @@
 # Implementation Summary: 4-Task Integration Complete ✅
 
 ## Overview
-Successfully implemented all 4 requested tasks to enhance the Wuta-Wuta application's state management, data persistence, and data fetching capabilities.
+Successfully implemented all 4 requested tasks to enhance the Axon Market application's state management, data persistence, and data fetching capabilities.
 
 ---
 
@@ -250,7 +250,7 @@ a9285c9 feat: add localStorage persistence to walletStore and userProfileStore
 ## Pull Request
 
 Create a PR from `feature/integrate-stores-and-data-persistence` to `main` on GitHub:
-https://github.com/Xhristin3/Wuta-Wuta/pull/new/feature/integrate-stores-and-data-persistence
+https://github.com/Xhristin3/Axon Market/pull/new/feature/integrate-stores-and-data-persistence
 
 ---
 

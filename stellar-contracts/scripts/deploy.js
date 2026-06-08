@@ -4,9 +4,9 @@ require('dotenv').config();
 
 // Contract configuration
 const CONTRACT_CONFIG = {
-  WUTA_WUTA_MARKETPLACE: {
-    name: 'WutaWutaMarketplace',
-    wasmPath: './target/wasm32-unknown-unknown/release/wutawuta_marketplace.wasm',
+  AXON_MARKETPLACE: {
+    name: 'AxonMarketplace',
+    wasmPath: './target/wasm32-unknown-unknown/release/axon_marketplace.wasm',
   },
 };
 
@@ -17,7 +17,7 @@ const DEFAULT_PARAMS = {
   minEvolutionInterval: '86400', // 1 day in seconds
 };
 
-class WutaWutaDeployer {
+class AxonMarketDeployer {
   constructor(network = 'testnet', secretKey) {
     this.network = network;
     this.networkConfig = network === 'testnet' ? {
@@ -36,16 +36,16 @@ class WutaWutaDeployer {
     }
   }
 
-  async deployWutaWutaMarketplace(params = {}) {
-    console.log(`🚀 Deploying WutaWuta Marketplace to ${this.network}...`);
+  async deployAxonMarketplace(params = {}) {
+    console.log(`🚀 Deploying Axon Market to ${this.network}...`);
     
     try {
       // Load WASM file (for now, we'll simulate deployment)
-      console.log('📦 Compiling and uploading WutaWuta Marketplace contract...');
+      console.log('📦 Compiling and uploading Axon Market contract...');
       
       // Simulate contract deployment
       const contractAddress = 'C' + Array(63).fill(() => Math.random().toString(36).charAt(2)).join('');
-      console.log(`✅ WutaWuta Marketplace deployed: ${contractAddress}`);
+      console.log(`✅ Axon Market deployed: ${contractAddress}`);
       
       // Initialize contract
       await this.initializeMarketplace(contractAddress, params);
@@ -55,13 +55,13 @@ class WutaWutaDeployer {
         network: this.network,
       };
     } catch (error) {
-      console.error(`❌ Failed to deploy WutaWuta Marketplace:`, error);
+      console.error(`❌ Failed to deploy Axon Market:`, error);
       throw error;
     }
   }
 
   async initializeMarketplace(contractAddress, params = {}) {
-    console.log('🔧 Initializing WutaWuta Marketplace...');
+    console.log('🔧 Initializing Axon Market...');
     
     const marketplaceFee = params.marketplaceFee || DEFAULT_PARAMS.marketplaceFee;
     const evolutionFee = params.evolutionFee || DEFAULT_PARAMS.evolutionFee;
@@ -74,7 +74,7 @@ class WutaWutaDeployer {
     console.log(`   - Treasury: ${treasury}`);
     
     // In a real implementation, this would call the contract
-    console.log('✅ WutaWuta Marketplace initialized successfully');
+    console.log('✅ Axon Market initialized successfully');
   }
 
   async mintTestArtwork(contractAddress, artworkParams) {
@@ -169,7 +169,7 @@ async function main() {
     process.exit(1);
   }
   
-  const deployer = new WutaWutaDeployer(network, secretKey);
+  const deployer = new AxonMarketDeployer(network, secretKey);
   
   try {
     switch (command) {
@@ -181,7 +181,7 @@ async function main() {
           treasury: args[5],
         };
         
-        const marketplaceResult = await deployer.deployWutaWutaMarketplace(marketplaceParams);
+        const marketplaceResult = await deployer.deployAxonMarketplace(marketplaceParams);
         console.log('🎉 Deployment complete!');
         console.log(`Contract Address: ${marketplaceResult.contractAddress}`);
         
@@ -190,7 +190,7 @@ async function main() {
           network: deployer.networkConfig.networkPassphrase,
           deployer: deployer.publicKey,
           contracts: {
-            wutawutaMarketplace: marketplaceResult.contractAddress,
+            axonMarketplace: marketplaceResult.contractAddress,
           },
           deployedAt: new Date().toISOString(),
           params: marketplaceParams,
@@ -268,14 +268,14 @@ async function main() {
       case 'help':
       default:
         console.log(`
-🚀 Wuta-Wuta Marketplace Deployment Script
+🚀 Axon Market Deployment Script
 
 Usage:
   node deploy.js <command> [network] [options]
 
 Commands:
   deploy [network] [marketplaceFee] [evolutionFee] [minEvolutionInterval] [treasury]
-    Deploy the WutaWuta marketplace contract
+    Deploy the Axon Market contract
   
   mint <contractAddress> [network]
     Mint a test artwork
@@ -314,4 +314,4 @@ if (require.main === module) {
   main().catch(console.error);
 }
 
-module.exports = { WutaWutaDeployer };
+module.exports = { AxonMarketDeployer };

@@ -1,10 +1,10 @@
-# Wuta-Wuta
+# Axon Market
 
-"Wuta-Wuta: The engine powering the Muse ecosystem. This monorepo houses the complete source code for the AI-generated art trading platform, from UI components to blockchain logic." muse-fullstack-dapp
+"Axon Market: The engine powering the Kortex Network ecosystem. This monorepo houses the complete source code for the AI-generated art trading platform, from UI components to blockchain logic." muse-fullstack-dapp
 
 ## Overview
 
-Wuta-Wuta is a comprehensive AI-human collaborative art marketplace built on blockchain technology. It enables artists to create collaborative artworks with AI models, mint them as NFTs, and trade them in a decentralized marketplace.
+Axon Market is a comprehensive AI-human collaborative art marketplace built on blockchain technology. It enables artists to create collaborative artworks with AI models, mint them as NFTs, and trade them in a decentralized marketplace.
 
 ## Features
 
@@ -50,7 +50,7 @@ Comprehensive testing suite including:
 ```bash
 # Clone the repository
 git clone https://github.com/olaleyeolajide81-sketch/Wuta-Wuta.git
-cd Wuta-Wuta
+cd Axon Market
 
 # Install dependencies
 npm install

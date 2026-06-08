@@ -161,7 +161,7 @@ describe("Marketplace Integration Flow", function () {
     it("Should handle complete project lifecycle with issues", async function () {
       // 1. Maintainer creates project
       const projectTx = await projectManager.connect(maintainer).createProject(
-        "Muse Art Marketplace",
+        "Kortex Network",
         "AI-human collaborative art marketplace platform",
         "https://github.com/muse-org/art-marketplace"
       );
@@ -170,7 +170,7 @@ describe("Marketplace Integration Flow", function () {
       
       // Verify project creation
       const project = await projectManager.getProject(projectId);
-      expect(project.name).to.equal("Muse Art Marketplace");
+      expect(project.name).to.equal("Kortex Network");
       expect(project.maintainer).to.equal(maintainer.address);
       expect(project.isActive).to.be.true;
       

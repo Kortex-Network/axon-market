@@ -1,4 +1,4 @@
-// Lightweight AI client + transformer for Wuta-Wuta
+// Lightweight AI client + transformer for Axon Market
 const API_URL = process.env.REACT_APP_AI_PROXY_URL || '/api/ai/generate';
 
 async function callAiProxy(prompt) {

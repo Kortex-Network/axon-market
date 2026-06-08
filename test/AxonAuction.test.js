@@ -1,5 +1,5 @@
-// WutaAuction.test.js — Hardhat / ethers v5 test suite
-// Run with: npx hardhat test test/WutaAuction.test.js
+// AxonAuction.test.js — Hardhat / ethers v5 test suite
+// Run with: npx hardhat test test/AxonAuction.test.js
 
 const { expect } = require("chai");
 const { ethers } = require("hardhat");
@@ -18,10 +18,10 @@ async function deployMockNFT(signer) {
   return MockNFT.deploy("MockNFT", "MFT");
 }
 
-/** Deploy WutaAuction. */
+/** Deploy AxonAuction. */
 async function deployAuction(signer) {
-  const WutaAuction = await ethers.getContractFactory("WutaAuction", signer);
-  return WutaAuction.deploy();
+  const AxonAuction = await ethers.getContractFactory("AxonAuction", signer);
+  return AxonAuction.deploy();
 }
 
 const ONE_ETH  = ethers.utils.parseEther("1");
@@ -30,7 +30,7 @@ const TWO_ETH  = ethers.utils.parseEther("2");
 
 // ─── Tests ────────────────────────────────────────────────────────────────────
 
-describe("WutaAuction", function () {
+describe("AxonAuction", function () {
   let owner, seller, bidder1, bidder2, stranger;
   let nft, auction;
   const TOKEN_ID = 1;
@@ -85,26 +85,26 @@ describe("WutaAuction", function () {
         auction.connect(stranger).createAuction(
           nft.address, TOKEN_ID, STARTING_PRICE, RESERVE_PRICE, DURATION
         )
-      ).to.be.revertedWith("WutaAuction: caller is not token owner");
+      ).to.be.revertedWith("AxonAuction: caller is not token owner");
     });
 
     it("reverts if startingPrice is 0", async function () {
       await expect(
         auction.connect(seller).createAuction(nft.address, TOKEN_ID, 0, RESERVE_PRICE, DURATION)
-      ).to.be.revertedWith("WutaAuction: starting price must be > 0");
+      ).to.be.revertedWith("AxonAuction: starting price must be > 0");
     });
 
     it("reverts if reservePrice < startingPrice", async function () {
       await expect(
         auction.connect(seller).createAuction(nft.address, TOKEN_ID, ONE_ETH, HALF_ETH, DURATION)
-      ).to.be.revertedWith("WutaAuction: reserve must be >= starting price");
+      ).to.be.revertedWith("AxonAuction: reserve must be >= starting price");
     });
 
     it("reverts if duration exceeds MAX_DURATION", async function () {
       const tooLong = 31 * 24 * 3600; // 31 days
       await expect(
         auction.connect(seller).createAuction(nft.address, TOKEN_ID, STARTING_PRICE, RESERVE_PRICE, tooLong)
-      ).to.be.revertedWith("WutaAuction: duration too long");
+      ).to.be.revertedWith("AxonAuction: duration too long");
     });
   });
 
@@ -137,7 +137,7 @@ describe("WutaAuction", function () {
       const tooLow = STARTING_PRICE.sub(1);
       await expect(
         auction.connect(bidder1).placeBid(auctionId, { value: tooLow })
-      ).to.be.revertedWith("WutaAuction: bid below minimum");
+      ).to.be.revertedWith("AxonAuction: bid below minimum");
     });
 
     it("reverts if bid is below 5 % increment over current highest", async function () {
@@ -146,7 +146,7 @@ describe("WutaAuction", function () {
       const insufficient = ethers.utils.parseEther("1.04");
       await expect(
         auction.connect(bidder2).placeBid(auctionId, { value: insufficient })
-      ).to.be.revertedWith("WutaAuction: bid below minimum");
+      ).to.be.revertedWith("AxonAuction: bid below minimum");
     });
 
     it("refunds the previous highest bidder immediately", async function () {
@@ -177,13 +177,13 @@ describe("WutaAuction", function () {
       await increaseTime(DURATION + 1);
       await expect(
         auction.connect(bidder1).placeBid(auctionId, { value: ONE_ETH })
-      ).to.be.revertedWith("WutaAuction: auction time expired");
+      ).to.be.revertedWith("AxonAuction: auction time expired");
     });
 
     it("reverts if seller tries to bid on own auction", async function () {
       await expect(
         auction.connect(seller).placeBid(auctionId, { value: ONE_ETH })
-      ).to.be.revertedWith("WutaAuction: seller cannot bid");
+      ).to.be.revertedWith("AxonAuction: seller cannot bid");
     });
   });
 
@@ -252,7 +252,7 @@ describe("WutaAuction", function () {
       const r3 = await tx3.wait();
       const aid3 = r3.events.find(e => e.event === "AuctionCreated").args.auctionId;
 
-      await expect(auction.endAuction(aid3)).to.be.revertedWith("WutaAuction: auction still running");
+      await expect(auction.endAuction(aid3)).to.be.revertedWith("AxonAuction: auction still running");
     });
   });
 
@@ -334,13 +334,13 @@ describe("WutaAuction", function () {
       await auction.connect(bidder1).placeBid(auctionId, { value: ONE_ETH });
       await expect(
         auction.connect(seller).cancelAuction(auctionId)
-      ).to.be.revertedWith("WutaAuction: bids already placed; wait for endTime");
+      ).to.be.revertedWith("AxonAuction: bids already placed; wait for endTime");
     });
 
     it("reverts if caller is not the seller", async function () {
       await expect(
         auction.connect(stranger).cancelAuction(auctionId)
-      ).to.be.revertedWith("WutaAuction: not the seller");
+      ).to.be.revertedWith("AxonAuction: not the seller");
     });
   });
 
@@ -357,7 +357,7 @@ describe("WutaAuction", function () {
     it("reverts if fee > 10 %", async function () {
       await expect(
         auction.connect(owner).setMarketplaceFee(1001)
-      ).to.be.revertedWith("WutaAuction: fee cannot exceed 10%");
+      ).to.be.revertedWith("AxonAuction: fee cannot exceed 10%");
     });
 
     it("non-owner cannot update fee", async function () {
